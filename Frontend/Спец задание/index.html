@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/additional_settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <button class="file-saver">Скачать</button>
+        <button class="file_open_in_full_screen" onclick="openFullscreenData()">Открыть в полноэкранном режиме</button>
+        <label for="file-upload" class="custom-file-upload">
+            <i class=""></i> Загрузить
+        </label>
+        <input class="file_loader" id="file-upload" onchange="readFile(this)" type="file"/>
+    </div>
+    <table id="table_data">
+        <tr>
+            <td id="cell1" class="cell1"><input type="text" class="person" id="drag1" draggable="true"></td>
+            <td id="cell2" class="cell2"><input type="text" class="person" id="drag2" draggable="true"></td>
+            <td id="cell3" class="cell3"><input type="text" class="person" id="drag3" draggable="true"></td>
+            <td id="cell4" class="cell4"><input type="text" class="person" id="drag4" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell5" class="cell5"><input type="text" class="person" id="drag5" draggable="true"></td>
+            <td id="cell6" class="cell6"><input type="text" class="person" id="drag6" draggable="true"></td>
+            <td id="cell7" class="cell7"><input type="text" class="person" id="drag7" draggable="true"></td>
+            <td id="cell8" class="cell8"><input type="text" class="person" id="drag8" draggable="true"></td>
+        </tr>
+        <tr> 
+            <td id="cell9" class="cell9"><input type="text" class="person" id="drag9" draggable="true"></td>
+            <td id="cell10" class="cell10"><input type="text" class="person" id="drag10" draggable="true"></td>
+            <td id="cell11" class="cell11"><input type="text" class="person" id="drag11" draggable="true"></td>
+            <td id="cell12" class="cell12"><input type="text" class="person" id="drag12" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell13" class="cell13"><input type="text" class="person" id="drag13" draggable="true"></td>
+            <td id="cell14" class="cell14"><input type="text" class="person" id="drag14" draggable="true"></td>
+            <td id="cell15" class="cell15"><input type="text" class="person" id="drag15" draggable="true"></td>
+            <td id="cell16" class="cell16"><input type="text" class="person" id="drag16" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell17" class="cell17"><input type="text" class="person" id="drag17" draggable="true"></td>
+            <td id="cell18" class="cell18"><input type="text" class="person" id="drag18" draggable="true"></td>
+            <td id="cell19" class="cell19"><input type="text" class="person" id="drag19" draggable="true"></td>
+            <td id="cell20" class="cell20"><input type="text" class="person" id="drag20" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell21" class="cell21"><input type="text" class="person" id="drag21" draggable="true"></td>
+            <td id="cell22" class="cell22"><input type="text" class="person" id="drag22" draggable="true"></td>
+            <td id="cell23" class="cell23"><input type="text" class="person" id="drag23" draggable="true"></td>
+            <td id="cell24" class="cell24"><input type="text" class="person" id="drag24" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell25" class="cell25"><input type="text" class="person" id="drag25" draggable="true"></td>
+            <td id="cell26" class="cell26"><input type="text" class="person" id="drag26" draggable="true"></td>
+            <td id="cell27" class="cell27"><input type="text" class="person" id="drag27" draggable="true"></td>
+            <td id="cell28" class="cell28"><input type="text" class="person" id="drag28" draggable="true"></td>
+        </tr>
+        <tr>
+            <td id="cell29" class="cell29"><input type="text" class="person" id="drag29" draggable="true"></td>
+            <td id="cell30" class="cell30"><input type="text" class="person" id="drag30" draggable="true"></td>
+            <td id="cell31" class="cell31"><input type="text" class="person" id="drag31" draggable="true"></td>
+            <td id="cell32" class="cell32"><input type="text" class="person" id="drag32" draggable="true"></td>
+        </tr>
+    </table>
+    <script>
+        let datas_start = localStorage['datas'] || '';
+        let i = 0
+        let index = 0
+        while (true) {
+        let mass = (datas_start).split("\n")
+        // let str = String(reader.result[i]).trim()
+
+        console.log(datas_start[i])
+        if (mass[i][0] == "-") {
+            index+=1
+            // console.log(str[i])
+            document.getElementById(`drag${index}`).value = ((mass[i]).substring(1)).trim();
+            
+        }
+        i++
+        if (i > 100) {
+            break
+        }
+        }
+    </script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/additional_settings.js"></script>
+
+</body>
+</html>
