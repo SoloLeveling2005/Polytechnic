@@ -19,12 +19,48 @@
 	</div>
     <script defer type="text/javascript">
         function showDOM() {
-            showChildNodes(node, doc)
+			let newWin = window.open("about:blank", "hello", "width=700,height=400");
+			newWin.document.write(
+				`
+				<!doctype html>
+				<html>
+				<head>
+					<title>Новое окно</title>
+					<meta charset="utf-8">
+				</head>
+				<body>
+				`
+			);
+            showChildNodes(document.body, newWin)
+			newWin.document.write(
+				`
+				</body>
+				</html>
+				`
+			);
         }
 
         function showChildNodes(node, doc){
-            
-        }
+			for (let elem of node.childNodes) {
+				console.log(elem)
+				if (elem.nodeName == "SCRIPT") {
+				} else {
+					if (elem.nodeName == "#text") {
+						doc.document.write(
+							elem.parentNode = elem.textContent
+						);
+					} else {
+						if (elem.childNodes[0].nodeName == "#text") {
+							doc.document.write(
+								elem.outerHTML
+							);
+						} else {
+							showChildNodes(elem.nodeName, doc)
+						}	
+					}
+				}
+			}
+		}
 		/*
 			Создайте и опишите функцию showDOM(), которая открывает новое окно браузера 
 				и выводит на экран структуру текущего документа, вызывая
