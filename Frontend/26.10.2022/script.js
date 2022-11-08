@@ -8,8 +8,10 @@ function winOpen() {
 				окно должно быть открыто строго по середине экрана
 		2. Передайте фокус созданному окну
 	*/
+    
+    
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-    width=700,height=600,left=400,top=200`;
+    width=700,height=600,left=${window.screen.width/2-350},top=${window.screen.height/2-300}`;
 
     win = open('', 'test', params);
     win.focus();
