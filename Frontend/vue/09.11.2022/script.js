@@ -1,35 +1,27 @@
-Vue.component('buttons', {
+
+
+
+
+
+
+
+Vue.component('Buttons', {
+    props: ['count'],
     data: function () {
         return {
-            elements: [
-                {
-                    id:1,
-                    title:"",
-                    count:0,
-                    classs:"btn btn-primary m-1",
-                },
-                {
-                    id:2,
-                    title:"",
-                    count:0,
-                    classs:"btn btn-primary m-1",
-                },
-                {
-                    id:3,
-                    title:"",
-                    count:0,
-                    classs:"btn btn-primary m-1",
-                }
-            ]
+            hi:1
         }
     },
-    methods:{
-        re_class: function(id_element) {
-            for (let elem of this.elements){
-                if (Number(elem.id) == Number(id_element)) {
-                    elem.classs = "btn btn-success m-1"
+    methods: {
+        num_plus: function (event) {
+            event.path[0].innerHTML++
+            for (let i of document.querySelectorAll(".btn")) {
+                i.classList.remove('btn-primary');
+                i.classList.remove('btn-success');
+                if (i == event.path[0]) {
+                    i.classList.add('btn-success');
                 } else {
-                    elem.classs = "btn btn-primary m-1"
+                    i.classList.add('btn-primary');
                 }
             }
         }
@@ -37,8 +29,8 @@ Vue.component('buttons', {
     template: 
     `
     <div>
-        <div v-for="element in elements">
-            <button :class="element.classs" type="button" :key="element.id" @click="element.count++,re_class(element.id)">{{element.count}}</button>
+        <div v-for="n in Number(count)" :key="n">
+            <button class="btn btn-primary m-1" type="button" @click="num_plus">0</button>
         </div>
     </div>
     
