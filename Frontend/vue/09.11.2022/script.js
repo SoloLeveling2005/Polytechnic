@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 Vue.component('Buttons', {
     props: ['count'],
     data: function () {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.g    static.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body class="dark">
+    <section class="main">
+        <h2 class="title-page">My Todos</h2>
+        <div class="new-task-block">
+            <div class="create-title-task">
+                <p class="p-title">Name</p>
+                <input class="input-name" type="text" placeholder="Name">
+            </div>
+            <div class="create-description-task">
+                <p class="p-description">Description</p>
+                <input type="text" placeholder="description" class="input-description">
+            </div>
+            <div class="create-task-block-button">
+                <button class="button-create-task">Add Todo</button>
+            </div>
+        </div>
+        <div class="tasks-section" id="tasks-section">
+            <!-- <div class="task">
+                <div class="title-description">
+                    <p class="title-text in_progress-title">Task 1</p>
+                    <p class="description-text in_progress-description">Description task</p>
+                </div>
+                <div class="buttons">
+                    <button class="button-complate">Complate</button>
+                    <button class="button-delete">Delete</button>
+                </div>
+            </div> -->
+            <tasks></tasks>
+
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
