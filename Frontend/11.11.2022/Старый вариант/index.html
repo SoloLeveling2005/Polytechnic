@@ -37,7 +37,28 @@
         <div class="tasks-section" id="tasks-section">
             
             <template v-for="task in tasks_data">
-                <task :id="Number(task.id)" :title="task.title" :description="task.description" :done="task.done"></task>
+                <div class="task" :id="task.id" :key="task.id">
+                    <template v-if="task.do == 'in_progress'">
+                        <div class="title-description">
+                            <p class="title-text in_progress-title">{{task.title}}</p>
+                            <p class="description-text in_progress-description">{{task.description}}</p>
+                        </div>
+                        <div class="buttons">
+                            <button v-if="task.do == 'in_progress'" class="button-complate" @click="perform_task(task.id)">Complate</button>
+                            <button class="button-delete" @click="delete_task(task.id)">Delete</button>
+                        </div>
+                    </template> 
+                    <template v-else-if="task.do == 'ready'">
+                        <div class="title-description">
+                            <p class="title-text ready">{{task.title}}</p>
+                            <p class="description-text ready">{{task.description}}</p>
+                        </div>
+                        <div class="buttons">
+                            <button v-if="task.do == 'in_progress'" class="button-complate" @click="perform_task(task.id)">Complate</button>
+                            <button class="button-delete" @click="delete_task(task.id)">Delete</button>
+                        </div>
+                    </template>
+                </div>
             </template> 
             
         </div>
