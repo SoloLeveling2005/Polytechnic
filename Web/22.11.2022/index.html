@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<body>
+    <div class="ped"></div>
+    <div class="city">
+        <div class="car">
+            <div class="wheel1"></div>
+            <div class="wheel2"></div>
+        </div>
+        
+    </div>
+    
+
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .city {
+            position: absolute;
+            min-width: 250vw;
+            height: 100vh;
+            background: url(fon.png) no-repeat;
+            background-size: contain;
+            animation:3s infinite linear;
+            animation-fill-mode: forwards; 
+            animation-play-state: paused;
+            animation-name: fon; 
+        }
+        .car {
+            position: fixed;
+            width: 300px;
+            height: 60px;
+            background: url(car.png) no-repeat;
+            background-size: contain;
+            display: flex;
+            padding-top: 50px;
+            bottom: 100px;
+            left: 50px;
+            
+        }
+        .wheel1 {
+            width: 50px;
+            height: 50px;
+            background: url(wheel.png) no-repeat;
+            background-size: contain;
+            margin-left: 37px;
+            animation:3s infinite linear;
+            animation-fill-mode: forwards; 
+            animation-play-state: paused;
+            animation-name: wheele; 
+
+        }
+        .wheel2 {
+            width: 50px;
+            height: 50px;
+            background: url(wheel.png) no-repeat;
+            background-size: contain;
+            margin-left: 117px;
+            animation:3s infinite linear;
+            animation-fill-mode: forwards; 
+            animation-play-state: paused;
+            animation-name: wheele; 
+        }
+        .ped {
+            position: fixed;
+            width: 95px;
+            height: 200px;
+            background: url(ped.png) no-repeat;
+            background-size: contain;
+            bottom: 100px;
+            right: 50px;
+            z-index: 100;
+        }
+        .ped:hover ~ .city{
+            animation-play-state: running;
+        }
+        .ped:hover ~ .city .wheel1{
+            animation-play-state: running;
+        }
+        .ped:hover ~ .city .wheel2{
+            animation-play-state: running;
+        }
+
+        @keyframes fon {
+            0% {
+                left: 0px;
+            }
+            10% {
+                left: calc(-212px * 1);
+            }
+            20% {
+                left: calc(-212px * 2);
+            }
+            30% {
+                left: calc(-212px * 3);
+            }
+            40% {
+                left: calc(-212px * 4);
+            }
+            50% {
+                left: calc(-212px * 5);
+            }
+            60% {
+                left: calc(-212px * 6);
+            }
+            70% {
+                left: calc(-212px * 7);
+            }
+            80% {
+                left: calc(-212px * 8);
+            }
+            90% {
+                left: calc(-210px * 9);
+            }
+            100% {
+                left: calc(-210px * 10);
+            }
+        }
+        @keyframes wheele {
+            0% {
+                transform:rotate(0);
+            }
+            10% {
+                transform:rotate(calc(36deg * 1));
+            }
+            20% {
+                transform:rotate(calc(36deg * 2));
+            }
+            30% {
+                transform:rotate(calc(36deg * 3));
+            }
+            40% {
+                transform:rotate(calc(36deg * 4));
+            }
+            50% {
+                transform:rotate(calc(36deg * 5));
+            }
+            60% {
+                transform:rotate(calc(36deg * 6));
+            }
+            70% {
+                transform:rotate(calc(36deg * 7));
+            }
+            80% {
+                transform:rotate(calc(36deg * 8));
+            }
+            90% {
+                transform:rotate(calc(36deg * 9));
+            }
+            100% {
+                transform:rotate(calc(36deg * 10));
+            }
+        }
+    </style>
+</body>
+</html>
