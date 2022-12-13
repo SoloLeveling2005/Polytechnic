@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+        header {
+            width: 100%;
+            height: 55vh;
+            display: flex;
+            background:url(orig.png) no-repeat;
+            background-size: 100%;
+            justify-content: center;
+        }
+        header .content {
+            width: 50%;
+            text-align: right;
+            padding-top: 30px;
+        }
+        header .content h1 {
+            color: white;
+        }
+        header .content h4 {
+            margin: 10px 0;
+            opacity: .8;
+        }
+        header .content button {
+            color: white;
+            background-color: black;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: 0px;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+        header .content button:hover {
+            transform: scale(1.1);
+        }
+        main {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(244, 244, 244);
+            padding-bottom: 30px;
+        }
+        main .content {
+            width: 50%;
+            padding-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        main .content .about_us,
+        main .content .about_us_description {
+            width: 100%;
+            text-align: center;
+            height: min-content;
+        }
+        main .content .about_us_description {
+            opacity: .7;
+        }
+        main .content .card {
+            padding: 40px 10px;
+            flex: .90;
+            text-align: center;
+            background-color: #fff;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-around;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 35px;
+            box-shadow: 0em 0em 5px rgba(122,122,122,0.5);
+        }
+        main .content .active {
+            background-color: #2b2b2b;
+            color: white;
+        }
+        main .content .card .img{
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            
+        }
+        main .content .card .img1 {
+            background: url(smile.png) no-repeat;
+            background-size: 100%;
+        }
+        main .content .card:hover .img1{
+            background: url(smile\ —\ копия.png) no-repeat;
+            background-size: 100%;
+            
+        } 
+        main .content .card:hover {
+            background-color: #2b2b2b;
+            color: white;
+
+        }
+        main .content .card .img2 {
+            background: url(camera\ -\ копия.png) no-repeat;
+            background-size: 100%;
+        }
+        main .content .card:hover .img2{
+            background: url(camera.png) no-repeat;
+            background-size: 100%;
+            
+        } 
+        main .content .card:hover {
+            background-color: #2b2b2b;
+            color: white;
+
+        }
+        main .content .card .img3 {
+            background: url(bulb.png) no-repeat;
+            background-size: 100%;
+        }
+        main .content .card:hover .img3{
+            background: url(bulb\ —\ копия.png) no-repeat;
+            background-size: 100%;
+            
+        } 
+        main .content .card:hover {
+            background-color: #2b2b2b;
+            color: white;
+
+        }
+        main .content .card .img4 {
+            background: url(Screenshot_567-PhotoRoom.png) no-repeat;
+            background-size: 100%;
+        }
+        main .content .card:hover .img4{
+            background: url(Screenshot_567-PhotoRoom\ —\ копия.png) no-repeat;
+            background-size: 100%;
+            
+        } 
+        main .content .card:hover {
+            background-color: #2b2b2b;
+            color: white;
+
+        }
+        main .content .card h3 {
+            font-size: 16px;
+            line-height: 20px;
+            width: 100%;
+        }
+        main .content .card h4 {
+            font-size: 14px;
+            line-height: 20px;
+            opacity: .6;
+        }
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            header {
+                background: url(orig.png) no-repeat center;
+                background-size: 150%;
+            }
+            header .content {
+                width: 60%
+            }
+            main {
+                height: auto;
+            }
+            main .content {
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            main .content .card {
+                min-width: 40%;
+            }
+        } 
+        @media screen and (min-width: 380px) and (max-width: 425px) {
+            header {
+                background: url(orig.png) no-repeat center;
+                background-size: 350%;
+            }
+            header .content {
+                width: 60%
+            }
+            main {
+                height: auto;
+            }
+            main .content {
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        } 
+        @media screen and (min-width: 425px) and (max-width: 770px)  {
+            header {
+                background: url(orig.png) no-repeat center;
+                background-size: 300%;
+            }
+            header .content {
+                width: 60%;
+            }
+            header .content h1 {
+                font-size: 28px;
+            }
+            header .content h4 {
+                font-size: 16px;
+            }
+            header .content button {
+                margin-top: 10px;
+            }
+            main {
+                height: auto;
+            }
+            main .content {
+                width: 70%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            main .content .card .title {
+                margin: 10px;
+            }
+            main .content .card {
+                min-width: 40%;
+            }
+        } 
+        @media screen and (min-width: 770px) and (max-width: 1025px) {
+            header {
+                background: url(orig.png) no-repeat center;
+                background-size: 170%;
+            }
+            header .content {
+                width: 60%;
+            }
+            main {
+                height: auto;
+            }
+            main .content {
+                width: 60%;
+            }
+            main .content .card {
+                min-width: 40%;
+            }
+        }
+        @media screen and (max-width: 380px) {
+            header {
+                background: url(orig.png) no-repeat center;
+                background-size: 400%;
+            }
+            header .content {
+                width: 60%;
+                
+            }
+            header .content h1 {
+                font-size: 28px;
+            }
+            header .content h4 {
+                font-size: 16px;
+            }
+            header .content button {
+                margin-top: 10px;
+            }
+            main {
+                height: auto;
+            }
+            main .content {
+                width: 70%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            main .content .card .title {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <h1>Ремонт компьютеров</h1>
+            <h4>И прочей техники</h4>
+            <button>Вызвать мастера</button>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <h2 class="about_us">О нас</h2>
+            <h4 class="about_us_description">Наши достижения</h4>
+
+            <div class="card">
+                <!-- <img src="" alt=""> -->
+                <div class="img img1"></div>
+                <h3 class="title">1000 Довольных клиентов</h3>
+                <h4 class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h4>
+            </div>
+            <div class="card">
+                <!-- <img src="" alt=""> -->
+                <div class="img img2"></div>
+                <h3 class="title">Лучшие Фотографии</h3>
+                <h4 class="description"> Cum sociis natoque penatibus et magnis dis parturient montes.</h4>
+            </div>
+            <div class="card">
+                <!-- <img src="" alt=""> -->
+                <div class="img img3"></div>
+                <h3 class="title">Лучшие идеи</h3>
+                <h4 class="description">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</h4>
+            </div>
+            <div class="card">
+                <div class="img img4"></div>
+                <h3 class="title">Windows</h3>
+                <h4 class="description">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</h4>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
