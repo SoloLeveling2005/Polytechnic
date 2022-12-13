@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: calc(70vw - 80px);
+    height: calc(85vh - 80px);
+    padding: 30px;
+    background-color: rgb(225, 225, 225);
+    margin: 30px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    border: 2px solid black;
+}
+.header .mini-logo {
+    width: 20%;
+    border-right: 2px solid black;
+    text-align: center;
+}
+.header .mini-logo  img {
+    width: 80%;
+}
+.header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    font-size: 42px;
+    padding: 40px 0;
+    text-transform: uppercase;
+}
+.main {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+    display: flex;
+    border: 2px solid black;
+}
+
+.main .content {
+    width: 70%;
+    font-size: 40px;
+    
+    padding: 30px;
+}
+
+.main .hr {
+    width: 2px;
+    background-color: black;
+    margin:-32px 10px;
+}
+
+.main .scientist-img {
+    margin-top: -30px;
+}
+
+
+
+.name {
+    color: red;
+}
+
+.footer {
+    display: flex;
+    border: 2px solid black;
+    padding: 30px;
+}
+.footer div a{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 28px;
+    color: blue;
+}
+.footer img {
+    width: 50px;
+}
+.footer .home {
+    width: 40%;
+    text-align: center;
+}
+.footer .back {
+    width: 30%;
+    text-align: center;
+}
+.footer .next {
+    width: 30%;
+    text-align: center;
+}
+.footer .hr {
+    width: 2px;
+    background-color: black;
+    margin:-32px 10px;
+}

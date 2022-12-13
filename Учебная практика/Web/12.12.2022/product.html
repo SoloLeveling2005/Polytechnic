@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/product.css">
+    <title>Products</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="menu">
+            <div class="left">
+                <h1 class="title">
+                    Компания
+                </h1>
+                <div class="elem-menu">Меню</div>
+                <div class="elem-menu">Услуги</div>
+                <div class="elem-menu">Каталог</div>
+                <div class="elem-menu">Проекты</div>
+                <div class="elem-menu">Информация</div>
+            </div>
+            <div class="right">
+                <button class="call">Заказать звонок</button>
+                <div class="shop">
+                    <img src="assets/img/shopping-cart.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="content">
+            
+            <div class="mini-menu">Товары - Каталог товаров - Электроприборы - Наушники</div>
+            <h1 class="title-product">Apple AirPods</h1>
+            <div class="price-product">
+                <h1>174 990 ₸</h1>
+                <p class="in-stock">В наличии</p>
+                <p class="mini-ifo">Тип наушников: Вкладыши / Тип подключения: Беспроводное / Активное шумоподавление: Да / Bluetooth: Да / Вес: 5,3 г</p>
+                <button class="in-shop">В корзину</button>
+            </div>
+            <div class="info-product">
+                <div class="img-product" style="background: url(assets/img/Screenshot_561-transformed.png) no-repeat; background-size: 100%;"></div>
+                <!-- <img src="assets/img/Screenshot_561-transformed.png" alt="" class="img-product"> -->
+                <!-- <div id="id" class="id"></div> -->
+                <div class="info">
+                    <p><span>Артикул:</span> 603026</p>
+                    <!-- <br> -->
+                    <br>
+                    <p><span>Тип наушников:</span> Вкладыши</p>
+                    <p><span>Тип подключения:</span> Беспроводное</p>
+                    <p><span>Активное шумоподавление:</span> Да</p>
+                    <p><span>Bluetooth:</span> Да</p>
+                    <p><span>Вес:</span> 5.3г</p>
+                    <p class="all-info">Все характеристики</p>
+                </div>
+            </div>
+            
+            <div class="slidebar">
+                <div class="active"><img src="assets/img/Screenshot_561-transformed.png" alt=""></div>
+                <div id="second"><img src="assets/img/Screenshot_559-transformed.png" alt=""></div>
+                <div id="third"><img src="assets/img/Screenshot_560-EHWDlQNGg-transformed.png" alt=""></div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        let second = document.querySelector('#second')
+        second.onmouseover = second_f;
+        second.onmouseout = first_f;
+        let third = document.querySelector('#third')
+        third.onmouseover = third_f;
+        third.onmouseout = first_f;
+        function first_f() {
+            document.querySelector('.img-product').style = "background: url(assets/img/Screenshot_561-transformed.png) no-repeat; background-size: 100%;"
+        }
+        function second_f() {
+            document.querySelector('.img-product').style = "background: url(assets/img/Screenshot_560-EHWDlQNGg-transformed.png) no-repeat; background-size: 100%;"
+        }
+        
+        function third_f() {
+            document.querySelector('.img-product').style = "background: url(assets/img/Screenshot_559-transformed.png) no-repeat; background-size: 100%;"
+
+        }
+    </script>
+</body>
+</html>
