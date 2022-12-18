@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    justify-content: center; */
+    overflow-x: hidden;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+#logo_svg__Layer_1 {
+    width: 30px;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    cursor: pointer;
+}
+header .logo #logo_svg__Layer_1 {
+    width: 60px;
+    margin-right: 10px;
+}
+header .logo .title_page h1 {
+    font-weight: bold;
+}
+header .logo .title_page h4 {
+    font-weight:500;
+    font-size: 14px;
+}
+header .info_delivery h2, 
+header .info_delivery h3 {
+    font-weight: 500    ;
+}
+header .info_delivery h2 span {
+    color: #ff6900;
+}
+header .info_delivery h3 span {
+    color: rgb(255, 217, 0);
+    /* background-color: yellow; */
+}
+header .phone-number {
+    margin-left: 40px;
+    
+}
+header .phone-number p {
+    font-size: 21px;
+    font-weight: 500;
+    cursor: pointer;
+}
+header .login {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 20px;
+    background-color: rgb(230, 230, 230);
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: auto;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+header .login:hover {
+    transform: scale(1.1);
+}
+
+menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+menu a {
+    margin-right: 2%;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+menu a:hover {
+    color: #ff6900;
+}
+menu .active {
+    color: #ff6900;
+}
+menu button {
+    margin-left: auto;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 25px;
+    background-color: #ff6900;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+
+menu div {
+    width: 11px;
+    height: 11px;
+    border-radius: 90px;
+    background-color: red;
+    margin-right: 5px;
+    animation: ether 2s infinite;
+}
+
+.we {
+    /* display: flex;
+    align-items: center;
+    justify-content: left; */
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.we h1 {
+    font-size: 50px;
+}
+.we .text {
+    font-size: 18px;
+    font-weight: 500;
+    width: 70%;
+}
+
+.we img {
+    width: 400px;
+    float: right;
+    margin-top: -200px;
+}
+
+
+.perfect_ingredients {
+    /* display: flex;
+    align-items: center;
+    justify-content: left; */
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 420px;
+
+}
+.perfect_ingredients h1 {
+    font-size: 50px;
+}
+.perfect_ingredients .text {
+    font-size: 18px;
+    font-weight: 500;
+    width: 70%;
+}
+
+.perfect_ingredients img {
+    width: 400px;
+    float: right;
+    margin-top: -400px;
+}
+
+.perfect_ingredients .cards {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.perfect_ingredients .card {
+    width: 40%;
+    border-radius: 10px;
+    background: rgb(253, 242, 232);
+    padding: 26px 35px 39px 26px;
+    font-size: 19px;   
+    margin-right: 20px;
+    margin-bottom: 20px; 
+    
+}
+
+.perfect_ingredients .card .title {
+    color: #ff6900;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: rgb(24, 24, 24);
+    margin-top: 800px;
+    width: 100%;
+    height: 250px;
+    color: white;
+}
+footer .content {
+    display: flex;
+    width: 75%;
+    /* height: 70px; */
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-top: 50px;   
+    padding-top: 30px;
+}
+
+footer .content .column p {
+    margin-right: 50px;
+    opacity: .7;
+    cursor: pointer;
+    line-height: 25px;
+}
+footer .content .column p:hover{
+    opacity: 1;
+}
+footer .content .column::first-line {
+    font-weight: 600;
+    opacity: 1;
+}
+footer .content .links {
+    text-align: right;
+    float: right;
+    margin: 0 auto;
+}
+
+footer .content .column .titles {
+    opacity: 1;
+}
+footer .content .links img {
+    width: 330px;
+}
+
+
+footer .content .links .text {
+    font-size: 16px;
+    opacity: .7;
+    margin-top: 30px;
+    font-weight: 500;
+}
+footer .content .links .phone {
+    font-size: 25px;
+    /* opacity: .7; */
+    margin: 15px 0;
+}
+footer .content .links .email {
+    font-size: 16px;
+    opacity: .7;
+}

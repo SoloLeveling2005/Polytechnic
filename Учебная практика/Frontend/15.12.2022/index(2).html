@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* font-family: 'Source Serif Pro', serif; */
+            font-family: 'Jost', sans-serif;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            background: rgb(59,68,80);
+            background: radial-gradient(circle, rgba(59,68,80,1) 0%, rgba(28,32,38,1) 100%);
+            display: flex;
+            justify-content: center;
+        }
+        #app {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-bottom: 120px;
+            /* padding-top: 12z0px; */
+        }
+        
+        #app .find-block {
+            width: 50%;
+            position: absolute;
+            margin-top: 40px;
+            left: calc(50vw - 25%);
+            top: 0;
+            z-index: 1000;
+        }
+
+        #app .find-block input {
+            border:1px solid white;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            padding: 5px 10px;
+            width: 100%;
+            border-radius: 7px;
+            margin-bottom: 10px;
+        }
+        img {
+            width: 35%;
+            transform: scale(1);
+        }
+        #app .buy {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 120px;
+            background-color: rgba(255, 255, 255, 0);
+            color: white;
+            border: 1px solid white;
+            border-radius: 22px;
+            padding: 10px 30px;
+            transition: all 0.1s ease-out;
+        }
+        #app .buy:hover {
+            font-weight: bold;
+            border: 2.5px solid white;
+            /* transform: scale(1.02); */
+        }
+        #app .info-car {
+            width: 20%;
+            margin-top: 80px;
+            /* margin-right: 30px; */
+        }
+        #app .info-car .title {
+            /* font-size: 14px; */
+            /* opacity: .7; */
+            font-weight: bold;
+            font-size: 45px;
+            text-transform: uppercase;
+        }
+        #app .info-car .description {
+            font-size: 16px;
+            opacity: .7;
+            /* max-height: 400px; */
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        #app .info-car .estimation {
+            margin-top: 10px;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+        ul li {
+            font-size: 22px;
+        }
+        .card-variants {
+            width: 100%;
+            padding: 7px 10px;
+            background-color: #fff;
+            border: 0;
+            border-radius: 10px;
+            color: black;
+            cursor: pointer;
+            margin-top: 5px;
+            
+        }
+
+        .buy_car {
+            background-color: #fff;
+            color: black;
+            position: absolute;
+            top: calc(50vh - 45vh);
+            left: calc(50vw - 45vw);
+            padding: 25px;
+            width: calc(90vw - 50px);
+            height: calc(90vh - 50px);
+            /* z-index: 999999; */
+            z-index: -19999;
+            display: flex;
+            /* display: none; */
+            border: 1px solid black;
+            border-radius: 10px;
+            opacity: 0;
+            transition: all 0.5s ease-out;
+        }
+        .buy_car .title {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .buy_car img {
+            max-width: 40vw;
+            min-width: 40vw;
+        }
+        .buy_car .right {
+            float: right;
+            /* width: 20%; */
+            margin-left: 50px;
+        }
+        .buy_car input {
+            margin: 5px 0;
+            padding: 5px 20px;
+        }
+        .buy_car .buy_button {
+            background-color: #fff;
+            color: black;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        
+        <!-- {{cars}} -->
+        <div class="find-block">
+            <input type="text" class="find" id="find" v-model="find" @click="update_data()"  autocomplete="off">
+            <!-- {{find}} -->
+            <template v-for="car in cars">
+                <template v-if="cars[car.global_id].title_car.toLowerCase().startsWith(find.toLowerCase()) &&  find != ''">
+                    <div class="card-variants" @click="increment(cars[car.global_id].global_id)"  v-if="find != ''">{{cars[car.global_id].title_car}}</div>
+                </template>
+            </template>   
+        </div>
+        <!-- {{cars[id_ok]}} -->
+        <!-- <template> -->
+            <div class="info-car" id="info-car">
+                <h1 class="title" id="title">{{cars[id_ok].title_car}}</h1>
+                <div class="description" id="description">
+                    {{cars[id_ok].car_description}}
+                </div>
+                <h1 class="estimation" id="estimation"> <br><p style="font-size: 23px;margin-top: -5px;"></p></h1>
+            </div>
+            <img :src="url" alt="" class="car" id="car">
+            <div class="more-info">
+                <h2 style="font-weight: bold;">Specifications</h2> 
+                <ul>
+                    <li>{{cars[id_ok].car_info[0][0]}}: {{cars[id_ok].car_info[0][1]}}</li>
+                    <li>{{cars[id_ok].car_info[1][0]}}: {{cars[id_ok].car_info[1][1]}}</li>
+                    <li>{{cars[id_ok].car_info[2][0]}}: {{cars[id_ok].car_info[2][1]}}</li>
+                    <li>{{cars[id_ok].car_info[3][0]}}: {{cars[id_ok].car_info[3][1]}}</li>
+                </ul>
+            </div>
+            <div class="buy_car">
+                <div class="left">
+                    <p class="title">{{cars[id_ok].title_car}} ({{cars[id_ok].title_mark}})</p>
+                    <img :src="url" alt="">
+                    <div class="right">
+                        <h2 style="font-weight: bold;">Спецификация</h2> 
+                        <ul>
+                            <li>{{cars[id_ok].car_info[0][0]}}: {{cars[id_ok].car_info[0][1]}}</li>
+                            <li>{{cars[id_ok].car_info[1][0]}}: {{cars[id_ok].car_info[1][1]}}</li>
+                            <li>{{cars[id_ok].car_info[2][0]}}: {{cars[id_ok].car_info[2][1]}}</li>
+                            <li>{{cars[id_ok].car_info[3][0]}}: {{cars[id_ok].car_info[3][1]}}</li>
+                        </ul>
+                        <input type="text" placeholder="Имя"><br>
+                        <input type="phone" placeholder="Номер"><br>
+                        <input type="text" placeholder="Страна"><br>
+                        <input type="text" placeholder="Город"><br>
+                        <input type="text" placeholder="Адрес"><br>
+                        <input type="submit" value="Заказать" class="buy_button">
+                    </div>
+                </div>
+                
+            </div>
+            <button class="buy" id="buy" @click="buy_it()">Приобрести</button>
+        <!-- </template> -->
+    </div>
+    
+
+
+
+
+
+
+    <!-- <div id="app">{{ message }}</div> -->
+    
+    
+    <script type="text/javascript" src="data.json"></script>
+    <script>
+        // document.addEventListener("onmousemove", (event)=>{
+        //     console.log(event.clientX)
+        // });
+    
+    
+    
+    const { createApp } = Vue
+
+    createApp({
+        methods: {
+            buy_it: function() {
+                document.querySelector('.buy_car').style = "opacity:1; z-index: 999999;"
+                console.log("hi")
+            },
+            increment: function(data) {
+                this.find = "";
+                this.id_ok=Number(data);
+                console.log(data);
+                this.url = this.cars[this.id_ok].car_href.split("/")
+                this.url[5] = "photo/"+this.url[5]
+                this.url = this.url.join("/").slice(0,-5) + "_1.jpg"
+            },
+            update_data: function() {
+                var data_cars
+                fetch('data7168.json')
+                    .then((response) => response.json())
+                    .then((json) => data_cars = json)
+                    .then(() =>{this.cars = data_cars}).then(() =>{console.log(this.cars)})
+                    .then(() => {
+                        console.log(this.cars[this.id_ok])
+                        this.url = this.cars[this.id_ok].car_href.split("/")
+                        this.url[5] = "photo/"+this.url[5]
+                        this.url = this.url.join("/").slice(0,-5) + "_1.jpg"
+                        console.log(this.url)
+                    }); 
+                
+            },
+            getRandomArbitrary: function(min, max) {
+                let num = parseInt(Math.random() * (max - min) + min);
+                this.id_ok = num
+            },
+            
+        },
+        data() {
+            return {
+                id_ok:0,
+                find:"",
+                cars:[],
+                url:"",
+            }
+        },
+        created: function(){
+            this.getRandomArbitrary(1,7168)
+            this.update_data()
+            
+        }
+    }).mount('#app')
+    
+
+    // const app = createApp({})
+    // app.component('star', {
+    // data: function () {
+    //     return {
+    //         value: 0
+    //     }
+    // },
+    
+    // template:`
+    // <div>
+    //     <b-form-rating v-model="value" show-clear show-value></b-form-rating>
+    //     <p class="mt-2">Значение: {{ value }}</p>
+    // </div>
+    // `,
+    // compilerOptions: {
+    //       isCustomElement: (tag) => ['b-form-rating'].includes(tag),
+    //     } 
+    // })
+    // app.mount('#stars')
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
+</body>
+</html>
