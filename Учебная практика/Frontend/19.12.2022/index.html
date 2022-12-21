@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">    <!-- CSS only -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Jost', sans-serif;
+
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        body {
+            max-width: 100vw;
+            max-height: 100vh;
+            min-width: 100vw;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .create-note {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .create-note span {
+            font-size: 20px;
+        }
+        .create-note input {
+            font-size: 20px;
+        }
+        .create-note button {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .note {
+            margin: 15px 10px;
+            /* padding: 5px; */
+            
+            /* border: 1px solid black; */
+        }
+        .notes .no-complate {
+            border-left: 6px solid red;
+            border-radius: 10px;
+        }
+        .notes .complate {
+            border-left: 6px solid green;
+            border-radius: 10px;
+        }
+        .notes * {
+            margin-left: 10px;
+        }
+        .notes .delete-complate {
+
+        }
+        .notes .delete-complate button {
+            margin: 5px;
+            padding: 7px 30px;
+        }
+    </style>
+</head>
+<body>
+    <section id="app">
+        <div class="create-note">
+            <span>Title:</span><input type="text" placeholder="title" autocomplete="off" v-model="text_note">
+            <span>Description:</span><input type="text" placeholder="description" autocomplete="off" v-model="description_note">
+            <button @click="CreateNote">Create Note</button>
+            
+        </div>
+        <div class="notes">
+            <template v-for="note in MassNotes"  :key="note.id">
+                <div class="note no-complate" v-if="note.complate == false">
+                    <h2>Title:{{note.title}}</h2>
+                    <h3 v-if="note.description != ''">Description:{{note.description}}</h3>
+                    <h4>Date Create:{{note.DateNoteCreate}}</h4>
+                    <div class="delete-complate">
+                        <button class="complate-button" @click="ComplateNote(note.id)">Complate</button>
+                        <button class="delete-button" @click="DeleteNote(note)">Delete</button>
+                    </div>
+                </div>
+                <div class="note complate" v-if="note.complate == true">
+                    <h2>Title:{{note.title}}</h2>
+                    <h3 v-if="note.description != ''">Description:{{note.description}}</h3>
+                    <h4>Date Create:{{note.DateNoteCreate}}</h4>
+                    <div class="delete-complate">
+                        <!-- <button class="complate-button">Complate</button> -->
+                        <button class="delete" @click="DeleteNote(note)">Delete</button>
+                    </div>
+                </div>
+            </template>
+            
+        </div>
+    </section>
+    
+
+
+<script>
+
+    const { createApp } = Vue
+
+    createApp({
+        methods: {
+            CreateNote: function() {
+                if (this.text_note == "") {
+                    alert("Поле title пусто")
+                } else {
+                    this.MassNotes.push({
+                        id:this.id,
+                        title:this.text_note,
+                        description:this.description_note,
+                        complate:false,
+                        DateNoteCreate:new Date(Date.now()).toLocaleString()
+                    })
+                    localStorage.setItem('MassNotesInStorage', JSON.stringify(this.MassNotes));
+                    this.id += 1
+                    this.text_note = ""
+                    this.description_note = ""
+                }
+                
+            },
+            DeleteNote: function(note) {
+                const index = this.MassNotes.indexOf(note);
+                if (index > -1) { // only splice array when item is found
+                    this.MassNotes.splice(index, 1); // 2nd parameter means remove one item only
+                }
+                localStorage.setItem('MassNotesInStorage', JSON.stringify(this.MassNotes));
+
+            },
+            ComplateNote: function(id) {
+                for (note in this.MassNotes){
+                    console.log(this.MassNotes[note])
+                    if (this.MassNotes[note].id == id) {
+                        this.MassNotes[note].complate = true
+                        break
+                    }
+                }
+                localStorage.setItem('MassNotesInStorage', JSON.stringify(this.MassNotes));
+
+            }
+            
+        },
+        data() {
+            return {
+                id:0,
+                text_note:"",
+                description_note:"",
+                MassNotes:[]
+            }
+        },
+        created: function() {
+            if (localStorage.MassNotesInStorage == undefined) {
+                localStorage.setItem('MassNotesInStorage', JSON.stringify(this.MassNotes));
+                console.log(localStorage.MassNotesInStorage)
+            } else {
+                this.MassNotes = JSON.parse(localStorage.getItem("MassNotesInStorage"));
+                console.log(typeof(this.MassNotes))
+                console.log("Начало работы")
+            }
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>
