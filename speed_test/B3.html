@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            border-radius: 90%;
+        }
+        .ball1 {
+            background: red;
+            top:25px;
+            left:25px;
+            -webkit-animation: animated1 10s infinite ease-out;
+        }
+        .ball2 {
+            background: green;
+            top:100px;
+            left:100px;
+            -webkit-animation: animated2 10s infinite ease-out;
+        }
+        .ball3 {
+            background: yellow;
+            top:100px;
+            left:25px;
+            -webkit-animation: animated3 10s infinite ease-out;
+        }
+        .ball4 {
+            background: blue;
+            top:25px;
+            left:100px;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+            -webkit-animation: animated4 10s infinite ease-out;
+        }
+
+        .balls {
+            -webkit-animation: main 10s infinite ease-in-out;
+        }
+
+        @keyframes main {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(calc(360deg * 6));
+            }
+        }
+
+        @keyframes animated1 {
+            from {
+                top:calc(25px);
+                left:calc(25px);
+            }
+            50% {
+                top:calc(25px - 30px);
+                left:calc(25px - 30px);
+            }
+            to {
+                top:calc(25px);
+                left:calc(25px);
+            }
+        }
+        @keyframes animated2 {
+            from {
+                top:calc(100px);
+                left:calc(100px);
+            }
+            50% {
+                top:calc(100px + 30px);
+                left:calc(100px + 30px);
+            }
+            to {
+                top:calc(100px);
+                left:calc(100px);
+            }
+        }
+        @keyframes animated3 {
+            from {
+                top:calc(100px);
+                left:calc(25px);
+            }
+            50% {
+                top:calc(100px + 30px);
+                left:calc(25px - 30px);
+            }
+            to {
+                top:calc(100px);
+                left:calc(25px);
+            }
+        }
+        @keyframes animated4 {
+            from {
+                top:calc(25px);
+                left:calc(100px);
+            }
+            50% {
+                top:calc(25px - 30px);
+                left:calc(100px + 30px);
+            }
+            to {
+                top:calc(25px);
+                left:calc(100px);
+            }
+        }
+    </style>
+</head>
+<body style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="balls" style="position: relative; width: 170px; height: 170px;">
+        <div class="ball ball1"></div>
+        <div class="ball ball2"></div>
+        <div class="ball ball3"></div>
+        <div class="ball ball4"></div>
+    
+    </div>
+</body>
+</html>

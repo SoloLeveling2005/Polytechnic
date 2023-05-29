@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pole {
+            width: 600px;
+            height: 800px;
+            border: 2px solid black;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* transform: rotate(180deg); */
+        }
+        .circle {
+            position: absolute;
+            background-color: #252222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 320px;
+            height: 380px;
+            border: 4px solid rgb(207, 207, 176);
+            border-radius: 90%;
+        }
+        .mini-mini-circle {
+            background-color: #fff;
+            width: 130px;
+            height: 180px;
+            border: 0;
+            border-radius: 90%;
+            border: 4px solid yellow;
+        }
+        .mini-circle {
+            background-color: #ffffff00;
+            width: calc(130px + 100px);
+            height: calc(180px + 100px);
+            border: 0;
+            border-radius: 90%;
+            border: 4px solid yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            border-style: dashed;
+        }
+        .help-block {
+            position: absolute;
+            width: 203px;
+            height: 100px;
+            background-color: #252222;
+            z-index: 100;
+            top: 340px;
+        }
+        .circle1 {
+            top: 50px;
+        }
+        .circle2 {
+            top: 350px;
+        }
+        .car {
+            position: absolute;
+            width: 100px;
+            bottom: 80px;
+            transform: rotate(180deg);
+            z-index: 10000;
+            left: 250px;
+            animation: car 20s 1 ease-in-out;
+        }
+
+
+        @keyframes car {
+            from {
+                bottom: 80px;
+                transform: rotate(180deg);
+                left: 250px;
+            }
+            2.5% {
+                bottom: 100px;
+                left: 300px;
+                transform: rotate(150deg);
+            }
+            5% {
+                bottom: 130px;
+                left: 330px;
+                transform: rotate(130deg);
+            }
+            7.5% {
+                bottom: 170px;
+                left: 350px;
+                transform: rotate(110deg);
+            }
+            10% {
+                bottom: 200px;
+                left: 360px;
+                transform: rotate(100deg);
+            }
+            12.5% {
+                bottom: 220px;
+                left: 360px;
+                transform: rotate(95deg);
+            }
+            15% {
+                bottom: 250px;
+                left: 360px;
+                transform: rotate(80deg);
+            }
+            17.5% {
+                bottom: 290px;
+                left: 355px;
+                transform: rotate(50deg);
+            }
+            20% {
+                bottom: 330px;
+                left: 330px;
+                transform: rotate(20deg);
+            }
+            22.5% {
+                bottom: 350px;
+                left: 300px;
+                transform: rotate(10deg);
+            }
+            25% {
+                bottom: 380px;
+                left: 260px;
+                transform: rotate(0deg);
+            }
+            to {
+                bottom: 80px;
+                transform: rotate(180deg);
+                left: 250px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="pole">
+        <div class="help-block"></div>
+        <img src="./B11-car.png" alt="" class="car">
+
+        <div class="circle circle1">
+            <div class="mini-circle">
+                <div class="mini-mini-circle">
+                
+                </div>
+            </div>
+            
+        </div>
+        <div class="circle circle2">
+            <div class="mini-circle">
+                <div class="mini-mini-circle">
+                
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .box input {
+            margin: 10px 0;
+            font-size: 21px;
+            padding: 10px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="box">
+        <input type="text" id="radius" value="20">
+        <input type="text" id="shadow" value="0 0 10px rgba(0,0,0,0.5)">
+    </div>
+
+    <script>
+        
+        setInterval(()=>{
+            let radius = document.getElementById('radius').value
+            let shadow = document.getElementById('shadow').value
+            document.getElementById('box').style = `
+                box-shadow: ${shadow}; border-radius:${radius}px;
+            `
+        }, 1000)
+    </script>
+</body>
+</html>

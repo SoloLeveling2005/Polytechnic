@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+        .section {
+            width: 360px;
+            height: 640px;
+            border: 1px solid black;
+        }
+        .menu-chapter {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid black;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .h-100 {
+            height: 100%;
+        }
+        .d-flex {
+            display: flex;
+        }
+        .align-items-center {
+            align-items: center;
+        }
+        .justify-content-center {
+            justify-content: center;
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .opacity-50 {
+            opacity: .5;
+        }
+        .opacity-75 {
+            opacity: .75;
+        }
+        .position-relative {
+            position: relative;
+        }
+        .position-absolute {
+            position: absolute;
+        }
+        .from-new-message {
+            bottom: 0;
+            right: 0;
+        }
+        .form-control {
+            padding: 7px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline:none;
+            font-size: 16px;
+        }
+        .btn {
+            cursor: pointer;
+            padding: 7px 14px;
+            font-size: 16px;
+        }
+        .btn-success {
+            background-color: rgb(0, 163, 0);
+            border: 0;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="menu-chapter d-flex align-items-center cursor-pointer">
+            <h2 style="padding-left: 20px;">Messenger</h2>
+        </div>
+        <div class="menu-chapter d-flex align-items-center cursor-pointer">
+            <img src="./A7-profil.jpg" style="width: 70px; height: 70px;" alt="">
+            <div>
+                <h3 style="padding: 0; margin: 0;">Uldanov Mansur 1</h3>
+                <p style="padding: 0; margin: 0;" class="opacity-75">Text text</p>
+            </div>
+            
+        </div>
+        <div class="menu-chapter d-flex align-items-center cursor-pointer">
+            <img src="./A7-profil.jpg" style="width: 70px; height: 70px;" alt="">
+            <div>
+                <h3 style="padding: 0; margin: 0;">Uldanov Mansur 2</h3>
+                <p style="padding: 0; margin: 0;" class="opacity-75">Text text</p>
+            </div>
+            
+        </div>
+    </section>
+    <section class="section position-relative">
+        <div class="menu-chapter d-flex align-items-center cursor-pointer">
+            <img src="./A7-profil.jpg" style="width: 70px; height: 70px;" alt="">
+            <div>
+                <h3 style="padding: 0; margin: 0;">Uldanov Mansur 1</h3>
+                <p style="padding: 0; margin: 0;" class="opacity-75">Text text</p>
+            </div>
+            
+        </div>
+        <form action="" class="w-100 position-absolute from-new-message">
+            <input type="text" class="form-control">
+            <input type="submit" class="btn btn-success">
+        </form>
+        
+    </section>
+        
+    <script>
+
+    </script>
+</body>
+</html>

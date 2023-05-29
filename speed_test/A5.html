@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animate {
+            position: absolute;
+            top: 20px;
+            width: 300px;
+            height: auto;
+            left: calc(100vw + 40px);
+            animation-iteration-count: 1;
+            animation-duration: 25s;
+            animation-name: animated;
+        }
+
+        @keyframes animated {
+            from {
+                left: -300px;
+            }
+            to {
+                left: calc(100vw + 400px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="./A5.gif" alt="" class="animate"> 
+    <script>
+        
+    </script>
+</body>
+</html>

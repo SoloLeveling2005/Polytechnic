@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            width: 900px;
+            height: 600px;
+        }
+        .bg-dark-yellow {
+            background: rgb(214, 214, 0);
+        }
+        .bg-yellow {
+            background: yellow;
+        }
+        .bg-pink {
+            background: pink;
+        }
+        .bg-lightblue {
+            background: lightblue;
+        }
+        .bg-lightgreen {
+            background: lightgreen;
+        }
+        .bg-orange {
+            background: orange;
+        }
+        .bg-green {
+            background: green;
+        }
+        .bg-purple {
+            background: purple;
+        }
+        .bg-grey {
+            background: grey;
+        }
+        .bg-lightgrey {
+            background: lightgrey;
+        }
+        .site-title {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .nav-1 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .nav-2 {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .nav-3 {
+            grid-column-start: 6;
+            grid-column-end: 7;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .post-title {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .side-bar {
+            grid-column-start: 6;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .post-meta {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 8;
+        }
+        .main-content {
+            grid-column-start: 2;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        .main-content-image {
+            grid-column-start: 2;
+            grid-column-end: 6;
+            grid-row-start: 5;
+            grid-row-end: 8;
+        }
+        .ads {
+            grid-column-start: 6;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 6;
+        }
+        .other-stuffs {
+            grid-column-start: 6;
+            grid-column-end: 6;
+            grid-row-start: 6;
+            grid-row-end: 8;
+        }
+        .foter {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 8;
+            grid-row-end: 9;
+        }
+
+        .grid div {
+            margin: 3px;
+            font-weight: bold;
+            font-size: 22px;
+            display: flex !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid">
+        <div class="site-title bg-dark-yellow">Site title</div>
+        <div class="nav-1 bg-pink">Nav 1</div>
+        <div class="nav-2 bg-pink">Nav 2</div>
+        <div class="nav-3 bg-pink">Nav 3</div>
+        <div class="post-title bg-lightblue">Post Title</div>
+        <div class="side-bar bg-orange">Side Bar</div>
+        <div class="post-meta bg-lightgreen">Post Meta</div>
+        <div class="main-content bg-lightgrey">Main Content</div>
+        <div class="main-content-image bg-yellow">Main Content Image</div>
+        <div class="ads bg-green">Ads</div>
+        <div class="other-stuffs bg-purple">Other Stuffs</div>
+        <div class="foter bg-grey">@2018 footer</div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
