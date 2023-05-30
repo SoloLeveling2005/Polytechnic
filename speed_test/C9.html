@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body, html {
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" style="padding:5px; display: flex; flex-direction: column;">
+        <input id="name" style="margin-bottom: 10px; padding: 7px; font-size: 18px;" type="text" placeholder="Введите название расходов" autocomplete="off">
+        <input id="count" style="margin-bottom: 10px; padding: 7px; font-size: 18px;" type="text" placeholder="Введите стоимость" autocomplete="off">
+        <button style="padding: 7px; font-size: 18px;" id="addProduct">Добавить</button>
+        <p id="message"></p>
+    </form>
+
+    <div style="margin-left: 5px;" >
+        <h3 style="margin-top: 40px;">Список:</h3>
+        <ol id="data">
+            
+        </ol>
+    </div>
+    
+
+
+    <script>
+        let data = []
+        document.querySelector('#addProduct').addEventListener('click', function (event) {
+            event.preventDefault()
+
+            let name = document.querySelector('#name').value
+            let count = document.querySelector('#count').value
+
+            if (name=="" || count=="") {
+                document.querySelector('#message').innerHTML = "<span style='color:red;'>There was an error</span>"
+                setTimeout(()=>{
+                    document.querySelector('#message').innerHTML = ""
+                }, 3000)
+                return
+            } else {
+                document.querySelector('#message').innerHTML = "<span style='color:green;'>Correct</span>"
+            }
+
+            document.querySelector('#data').innerHTML+=`
+                <li>${name} - ${count}</li>
+            `
+
+            setTimeout(()=>{
+                document.querySelector('#name').value = ""
+                document.querySelector('#count').value = ""
+                document.querySelector('#message').innerHTML = ""
+            }, 3000)
+        })
+    </script>
+</body>
+</html>

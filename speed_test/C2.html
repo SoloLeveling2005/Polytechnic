@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html, body {
+      width: 100vw;
+      height: 100vh;
+    }
+    body {
+      background-color: #17193a;
+      
+    }
+    .block {
+      padding: 10px;
+      /* width: 10px; */
+      height: 80px;
+      margin: 0 10px;
+      background-color: #3cf0fe;
+    }
+    .load-block {
+      margin: 10px; 
+      height: 50px;
+      padding: 10px;
+      background-color: #3cf0fe;
+    }
+  </style>
+</head>
+<body>
+  <section style="display: flex; padding: 90px;">
+    <div class="block" id="block1" style="transition: .8s;"></div>
+    <div class="block" id="block2" style="transition: .8s;"></div>
+    <div class="block" id="block3" style="transition: .8s;"></div>
+    <div class="block" id="block4" style="transition: .8s;"></div>  
+  </section>
+
+  <script>
+    let step = 0
+    setInterval(()=>{
+      // document.getElementById('block1').classList = "block"
+      // document.getElementById('block2').classList = "block"
+      // document.getElementById('block3').classList = "block"
+      // document.getElementById('block4').classList = "block"
+      if (step == 0) {
+        document.getElementById('block1').classList = "block load-block"
+        
+        document.getElementById('block2').classList = "block"
+        document.getElementById('block3').classList = "block"
+
+        step += 1
+      } else if (step == 1) {
+        document.getElementById('block2').classList = "block load-block"
+        
+        document.getElementById('block3').classList = "block"
+        document.getElementById('block4').classList = "block"
+
+        step += 1
+      } else if (step == 2) {
+        document.getElementById('block3').classList = "block load-block"
+        
+        document.getElementById('block1').classList = "block"
+        document.getElementById('block4').classList = "block"
+
+        step += 1
+      } else if (step == 3) {
+        document.getElementById('block4').classList = "block load-block"
+        
+        document.getElementById('block1').classList = "block"
+        document.getElementById('block2').classList = "block"
+
+        step = 0
+      }
+      
+    }, 300)
+  </script>
+</body>
+</html>

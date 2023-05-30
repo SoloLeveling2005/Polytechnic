@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+        header {
+            width: 100vw;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(102, 102, 102);
+        }
+        header div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        header input {
+            padding: 5px;
+            font-size: 18px;
+            width: 85%;
+        }
+        header button {
+            padding: 6px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #fff;
+            border: 0px solid black;
+            /* border-radius: 5px ; */
+        }
+        main {
+            margin-top: 10px;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .main {
+            width: 75vw !important;
+        }
+
+
+
+        .bg-dark {
+            background-color: black !important;
+        }
+        .position-absolute {
+            position: absolute !important;
+        }
+        .position-relative {
+            position: relative !important;
+        }
+        .bottom-0 {
+            bottom: 0;
+        }
+        .text-white {
+            color: white !important;
+        }
+        .d-flex {
+            display: flex !important;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+
+        .queue {
+            padding: 10px;
+            /* width: 100%; */
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.521);
+            cursor: pointer;
+        }
+
+        .queue-block-img {
+            width: 130px;
+            height: 70px;
+            background-color: black;
+            margin-right: 20px;
+        }
+
+        .active-queue {
+            background-color: #61ffff62 !important;
+        }
+
+
+        /* The slider itself */
+        .slider {
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 5px; /* Specified height */
+            background: rgb(13, 227, 255); /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+            border-radius: 10px;
+        }
+
+        /* Mouse-over effects */
+        .slider:hover {
+            opacity: 1; /* Fully shown on mouse-over */
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: white; /* Green background */
+            border: 4px solid grey;
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 30px;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="">
+        <div style="width: 75vw;">
+            <input type="text" placeholder="Введите ваш запрос">
+            <button>Поиск</button>
+        </div>
+    </header>
+    <main>
+        <section class="main">
+            <table style="width: 100%;border-collapse:collapse;">
+                <tr>
+                    <td style="width: 78%;">
+                        <section class="bg-dark position-relative" style="width: 100%; height: 60vh;">
+                            <div class="position-absolute bottom-0 text-white" style="padding: 10px; width: calc(100% - 20px);">
+                                <div class="slidecontainer d-flex align-center" style="margin-bottom: 15px;">
+                                    <input type="range" min="0" max="3600" value="1" class="slider" id="myRange">
+                                </div>
+                                <div class="d-flex">
+                                    <img src="./B12-player-run.png" alt="" style="width: 30px; margin: 0 10px; cursor: pointer;">
+                                    <input id="jcp-volume" type="range" min="0" max="10" value="5" step="0.1" style="margin-right: 20px;"/>
+                                    <p id="videoTime">123</p>/<p>00:60:00</p>
+                                </div>
+                               
+                            </div>
+                        </section>
+                        <h2 style="margin-top: 10px;">Название фильма (10 тыс. просмотров)</h2>
+                        <h4>Очень интересное описание фильма.</h4>
+
+                        <h2 style="margin-top: 20px;">Последние комментрии</h2>
+                        <div style="margin: 10px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                        <div style="margin: 10px; margin-left: 30px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                        <div style="margin: 10px; margin-left: 30px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                        <div style="margin: 10px; margin-left: 60px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                        <div style="margin: 10px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                        <div style="margin: 10px; border: 1px solid black; padding: 10px;">
+                            Комментрии
+                        </div>
+                    </td>
+                    <td style="display: flex; ">
+                        <div style="margin-left:5px; border: 2px solid rgba(0, 0, 0, 0.39); width: 100%; font-weight: bold;">
+                            <div class="queue active-queue">
+                                <div class="queue-block-img"></div>
+                                <p>Title</p>
+                            </div>
+                            <div class="queue">
+                                <div class="queue-block-img"></div>
+                                <p>Title</p>
+                            </div>
+                            <div class="queue">
+                                <div class="queue-block-img"></div>
+                                <p>Title</p>
+                            </div>
+                            <div class="queue">
+                                <div class="queue-block-img"></div>
+                                <p>Title</p>
+                            </div>
+                            <div class="queue">
+                                <div class="queue-block-img"></div>
+                                <p>Title</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+    
+        </section>
+    </main>
+
+
+    <script>
+        setInterval(()=>{
+            let time = document.getElementById('myRange').value
+            let second = `${time%60}`.length == 1 ? `0${time%60}` : time%60 
+            let minute =  `${Math.floor(time/60)}`.length == 1 ? `0${Math.floor(time/60)}` : Math.floor(time/60)
+            videoTime = `00:${minute}:${second}`
+            document.getElementById('videoTime').textContent = videoTime
+        }, 100)
+
+        
+    </script>
+</body>
+</html>

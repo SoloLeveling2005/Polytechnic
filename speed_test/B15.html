@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            padding: 7px;
+            border-radius: 15px;
+        }
+        .bg-active {
+            background-color: red;
+        }
+        .bg-deactive {
+            background-color: rgba(255, 0, 0, 0.103);
+        }
+
+        table {
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; margin-bottom: 20px;">
+        <table class="table1">
+            <tr>
+                <td></td>
+                <td class="elem1 bg-active" style="padding: 7px 50px;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem2 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem3 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem4 bg-deactive"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem5 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem6 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem7 bg-active"></td>
+                <td></td>
+            </tr>
+        </table>
+        <table class="table2">
+            <tr>
+                <td></td>
+                <td class="elem1 bg-active" style="padding: 7px 50px;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem2 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem3 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem4 bg-deactive"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem5 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem6 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem7 bg-active"></td>
+                <td></td>
+            </tr>
+        </table>
+        <table class="table3" style="margin: 0 !important;">
+            <tr>
+                <td></td>
+                <td class="elem1 bg-active" style="padding: 7px 50px;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem2 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem3 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem4 bg-deactive"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem5 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem6 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem7 bg-active"></td>
+                <td></td>
+            </tr>
+        </table>
+        <div style="margin: 0 30px; height: 254px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
+            <div style="padding:7px; margin-top: 70px; border-radius: 30px; background-color: red;"></div>
+            <div style="padding:7px; margin-bottom: 70px; margin-top: 20px; border-radius: 30px; background-color: red;"></div>
+        </div>
+        <table class="table4">
+            <tr>
+                <td></td>
+                <td class="elem1 bg-active" style="padding: 7px 50px;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem2 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem3 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem4 bg-deactive"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem5 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem6 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem7 bg-active"></td>
+                <td></td>
+            </tr>
+        </table>
+        <table class="table5">
+            <tr>
+                <td></td>
+                <td class="elem1 bg-active" style="padding: 7px 50px;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem2 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem3 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem4 bg-deactive"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="elem5 bg-active"></td>
+                <td style="padding: 50px;"></td>
+                <td class="elem6 bg-active"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="elem7 bg-active"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <button id="startTimer" style="padding: 10px 20px; margin-right: 20px; font-size: 18px; background-color: #0bceff; color: white; border: 0; cursor: pointer;">Start timer</button>
+    <button id="stopTimer" style="padding: 10px 20px; margin-right: 20px; font-size: 18px; background-color: red; color: white; border: 0; cursor: pointer;">Stop timer</button>
+    <button id="resetTimer" style="padding: 10px 20px; font-size: 18px; background-color: rgb(206, 206, 0); color: white; border: 0; cursor: pointer;">Reset timer</button>
+    
+
+    
+
+
+    <script>
+        function setTime (timeNumber, number) {
+            if (number == 0) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-active"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            } else if (number == 1) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-deactive"
+            } else if (number == 2) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-active"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            }  else if (number == 3) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            } else if (number == 4) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-deactive"
+            } else if (number == 5) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            } else if (number == 6) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-active"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            } else if (number == 7) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-deactive"
+            } else if (number == 8) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-active"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            } else if (number == 9) {
+                document.querySelector(`.table${timeNumber} .elem1`).classList = "elem1 bg-active"
+                document.querySelector(`.table${timeNumber} .elem2`).classList = "elem2 bg-active"
+                document.querySelector(`.table${timeNumber} .elem3`).classList = "elem3 bg-active"
+                document.querySelector(`.table${timeNumber} .elem4`).classList = "elem4 bg-active"
+                document.querySelector(`.table${timeNumber} .elem5`).classList = "elem5 bg-deactive"
+                document.querySelector(`.table${timeNumber} .elem6`).classList = "elem6 bg-active"
+                document.querySelector(`.table${timeNumber} .elem7`).classList = "elem7 bg-active"
+            }
+        }
+        let seconds = 998;
+        let milliseconds = 0;
+        
+        // document.querySelector(`.table1 .elem1`).classList = ""
+
+        let intervalId;
+
+        function startTimer () {
+            intervalId =  setInterval(()=>{
+            milliseconds += 1
+            seconds += Math.floor(milliseconds/60)
+            milliseconds = milliseconds%60
+
+            if (seconds >= 1000) return
+
+            let Number1;
+            let Number2;
+            let Number3;
+            let Number4;
+            let Number5;
+            if (seconds.toString().length == 1) {
+                Number1 = 0
+                Number2 = 0
+                Number3 = seconds
+            }
+            if (seconds.toString().length == 2) {
+                Number1 = Math.floor(seconds/60)
+                if ((seconds%60).toString().length == 1) {
+                    Number2 = 0
+                    Number3 = seconds.toString().slice(1, 2);
+
+                } else {
+                    Number2 = (seconds%60).toString().slice(0, 1);
+                    Number3 = (seconds%60).toString().slice(1, 2);            
+                }
+            }
+            if (seconds.toString().length == 3) {
+                Number1 = seconds.toString().slice(0, 1);
+                Number2 = seconds.toString().slice(1, 2);   
+                Number3 = seconds.toString().slice(2, 3);   
+            }
+            if (milliseconds.toString().length == 1) {
+                Number4 = 0
+                Number5 = milliseconds
+            }
+            if (milliseconds.toString().length == 2) {
+                Number4 = milliseconds.toString().slice(0, 1);
+                Number5 = milliseconds.toString().slice(1, 2);
+            }
+
+            setTime(1, Number1)
+            setTime(2, Number2)
+            setTime(3, Number3)
+            setTime(4, Number4)
+            setTime(5, Number5)
+            console.log(seconds )
+            // document.querySelector(`.table1 .elem1`).classList
+        }, 10)
+        }
+        function stopTimer () {
+            clearInterval(intervalId);
+        }
+        function resetTimer () {
+            clearInterval(intervalId);
+            seconds = 0;
+            milliseconds = 0;
+            setTime(1, 0)
+            setTime(2, 0)
+            setTime(3, 0)
+            setTime(4, 0)
+            setTime(5, 0)
+        }
+        
+        
+        
+        document.querySelector('#startTimer').addEventListener('click',function(event) {
+            startTimer()
+        })
+        document.querySelector('#stopTimer').addEventListener('click',function(event) {
+            stopTimer()
+        })
+        document.querySelector('#resetTimer').addEventListener('click',function(event) {
+            resetTimer()
+        })
+
+    </script>
+</body>
+</html>

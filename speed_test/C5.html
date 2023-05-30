@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <p id="array"></p>
+    <p id="summ"></p>
+
+    <script>
+        let array = [0,1,2,3,4,5,6,7,8,9,10]
+
+        function calc(array) {
+            let summ = 0
+            for (let index in array) {
+                let number = array[index]
+                if (number%2==1) {
+                    summ += number
+                }
+            }
+            console.log(`Сумма: ${summ}`)
+            document.getElementById('array').innerHTML = `Масив: ${array}`
+            document.getElementById('summ').innerHTML = `Сумма нечетных чисел: ${summ}`
+        }
+        calc(array)
+    </script>
+</body>
+</html>
