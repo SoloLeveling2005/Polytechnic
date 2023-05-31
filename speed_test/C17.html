@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+        img {
+            width: 800px;
+            height: 540px;
+        }
+        .grid-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 800px;
+            height: 540px;
+        }
+
+        .grid-item {
+            border: 2px solid yellow;
+            transition: 3s;
+            /* Добавьте дополнительные стили для элементов сетки здесь, если требуется */
+        }
+    </style>
+</head>
+<body>
+    <img src="./C17-img.jpg" alt="">
+    <div class="grid-container" id="grid-container"></div>
+
+    <script>
+        let x = 5
+        let y = 3
+
+        function cut(x,y) {
+            var gridContainer = document.getElementById("grid-container");
+
+            // Очищаем существующую сетку
+            gridContainer.innerHTML = "";
+
+            // Устанавливаем стили для контейнера сетки
+            gridContainer.style.display = "grid";
+            gridContainer.style.gridTemplateColumns = "repeat(" + x + ", 1fr)";
+            gridContainer.style.gridTemplateRows = "repeat(" + y + ", 1fr)";
+
+            // Создаем элементы сетки
+            for (var i = 0; i < x * y; i++) {
+                var gridItem = document.createElement("div");
+                gridItem.className = "grid-item";
+                gridContainer.appendChild(gridItem);
+            }
+
+
+        }
+
+        cut(x,y)
+
+        let gridItems = document.querySelectorAll("#grid-container .grid-item")
+        let time = 700
+        gridItems.forEach(function(item) {
+            setTimeout(()=>{
+                item.style = "background-color:white;"
+            }, time)
+            time += 700
+        });
+
+
+    </script>
+</body>
+</html>

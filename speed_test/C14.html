@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text">
+    <input type="text" id="inputForKey">
     <div id="keyboard"></div>
 
 
     <script>
-        document. addEventListener('keypress', (event) => {
+        document.getElementById('inputForKey').addEventListener('keypress', (event) => {
             let shift = ''
             if (event.shiftKey) {
                 shift = `<button>Shift+</button>`

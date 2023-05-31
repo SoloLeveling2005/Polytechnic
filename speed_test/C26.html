@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            width: 100vw;
+            height: 100vh;
+        }
+        body {
+            padding: 20px;
+            width: calc(100vw - 40px);
+            height: calc(100vh - 40px);
+        }
+        .circle {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 90%;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        let circles = []
+        let locations = []
+        let colors = ["#1F2041","#4B3F72","#417B5A","#D0CEBA","#E9D2C0"]
+        let texts = ["Главная страница", "О компании", "Контакты", "Карта", "Конфиденциальность"]
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function generateNew() {
+            console.log("new iteration")
+            let size = Math.floor(getRandomArbitrary(300,400))
+
+            // Проверяем пересекаются ли круги
+            let location;
+            let clientWidth = 1300
+            let clientHeight = 900
+            let xLocation = Math.floor(getRandomArbitrary(20,clientWidth-size-20))
+            let yLocation = Math.floor(getRandomArbitrary(20,clientHeight-size-20))
+            let normal = true
+            for (let item of locations){
+                if (xLocation+size >= item.xStart && xLocation <= item.xEnd) {
+                    if (yLocation+size >= item.yStart && yLocation <= item.yEnd) {
+                        normal = false
+                        break                 
+                    }
+                }
+            }
+            if (normal == false) {
+                return generateNew() 
+            }
+
+
+                
+            let colorCount = Math.floor(getRandomArbitrary(0,colors.length))
+            let color = colors[colorCount]
+            colors.splice(colorCount, 1)
+
+            let textCount = Math.floor(getRandomArbitrary(0,colors.length))
+            let text = texts[textCount]
+            texts.splice(textCount, 1)
+
+            
+            locations.push({
+                "xStart":xLocation,
+                "yStart":yLocation,
+                "xEnd":xLocation+size,
+                "yEnd":yLocation+size,
+            })
+            circles.push({
+                "size":size,
+                "color":color,
+                "text":text,
+                "xLocation": xLocation,
+                "yLocation": yLocation,
+            })
+
+            document.body.innerHTML += `
+                <div class="circle" id="circle1" style="background-color:${color}; width:${size}px; height:${size}px; top:${yLocation}px; left:${xLocation}px;">${text}</div>
+            `
+        }
+
+        for (let i in [...Array(5).keys()]) {
+            setTimeout(()=>{
+                
+                generateNew()
+            }, 1000*i)
+            
+        }
+
+        console.log(circles)
+
+
+    </script>
+</body>
+</html>

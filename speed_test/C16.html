@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #smile {
+            width: 400px;
+            height: 400px;
+            padding: 10px;
+            position: relative;
+            border: 0;
+            border-radius: 90%;
+            transition: .5s all;
+        }
+        .eyes {
+            width: 70px;
+            height: 70px;
+            border: 0;
+            border-radius: 90%;
+        }
+        .mouth {
+            width: 60%;
+            height: 50px;
+            
+        }
+        .so-so {
+            border: 18px solid rgba(194, 194, 3, 0.89) !important;
+            background-color: rgba(255, 255, 0, 0.726);
+        }
+        .so-so .mouth {
+            background-color: rgb(197, 197, 0);
+            border-radius: 20px;
+        }
+        .so-so .eyes {
+            background-color: rgb(197, 197, 0);
+        }
+        .luck {
+            border: 18px solid rgba(3, 194, 28, 0.89) !important;
+            background-color: rgba(123, 255, 0, 0.671);
+        }
+        .luck .mouth {
+            background-color: rgba(3, 194, 28, 0.89);
+            border-radius: 0 0 90px 90px;
+        }
+        .luck .eyes {
+            background-color: rgba(3, 194, 28, 0.89);
+        }
+        .bad {
+            border: 18px solid rgba(194, 3, 3, 0.89) !important;
+            background-color: rgba(255, 0, 0, 0.671);
+        }
+        .bad .mouth {
+            background-color: rgba(194, 3, 3, 0.89);
+            border-radius: 90px 90px 0 0;
+        }
+        .bad .eyes {
+            background-color: rgba(194, 3, 3, 0.89);
+        }
+        button {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="so-so" id="smile">
+
+        <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 90px;">
+            <div class="eyes" style="margin-left: 100px;"></div>
+            <div class="eyes" style="margin-right: 100px;"></div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; margin-top: 90px;">
+            <div class="mouth"></div>
+        </div>
+        
+        <button id="luck" style="left:30%;bottom: -70px; padding: 5px 7px; font-size: 28px;">:)</button>
+        <button id="so-so" style="left:30%;bottom: -70px; margin-left: 60px; padding: 5px 7px; font-size: 28px;">:|</button>
+        <button id="bad" style="left:30%;bottom: -70px; margin-left: 120px; padding: 5px 7px; font-size: 28px;">:(</button>
+    </div>
+
+    <script>
+        document.querySelector("#so-so").addEventListener('click', function(event) {
+            document.querySelector('#smile').classList = "so-so"
+        })
+        document.querySelector("#luck").addEventListener('click', function(event) {
+            document.querySelector('#smile').classList = "luck"
+        })
+        document.querySelector("#bad").addEventListener('click', function(event) {
+            document.querySelector('#smile').classList = "bad"
+        })
+    </script>
+</body>
+</html>

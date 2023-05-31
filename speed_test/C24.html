@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        let arrayNumber = [9,7,6,5,8,3,4,1,2]
+        let evenNumbers = []
+        let lastNum = null
+        for (let i in arrayNumber) {
+            if (arrayNumber[i]%2 == 0) {
+                evenNumbers.push(arrayNumber[i])
+            }
+        }
+        evenNumbers.sort()
+        
+        let count = 0
+        for (let i in arrayNumber) {
+            if (arrayNumber[i]%2 == 0) {
+                arrayNumber[i]=evenNumbers[count]
+                count+=1
+            }
+            
+        }
+
+        console.log(arrayNumber)
+    </script>
+</body>
+</html>

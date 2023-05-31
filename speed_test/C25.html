@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+        #follow {
+            background-color: red;
+            border: 0;
+            border-radius: 90px;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="follow"></div>
+
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            document.querySelector('#follow').style.top = event.clientY - 35 +"px"
+            document.querySelector('#follow').style.left = event.clientX - 35 +"px"
+        })
+        
+    </script>
+</body>
+</html>

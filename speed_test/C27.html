@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+        }
+        input {
+            padding: 7px;
+            font-size: 18px;
+        }
+        button {
+            position: absolute;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 100%; height: 100%;">
+        <tr>
+            <td style="width: 25%;">
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                    
+                    <input type="text" placeholder="Введите цвет" value="#ff0000" id="input1">
+                </div>
+            </td>
+            <td style="width: 50%;">
+                <div style="" id="block">
+                    <button style="padding: 5px; left: -15px; top: 0px;"></button>
+                    <button style="padding: 5px; left: -15px; top: 15px;"></button>
+                    <button style="padding: 5px; left: -15px; top: 30px;"></button>
+                    <button style="padding: 5px; left: -15px; top: 45px;"></button>
+                    <button style="padding: 5px; left: -15px; top: 60px;"></button>
+
+                    <button style="padding: 5px; right: -15px; top: 0px;"></button>
+                    <button style="padding: 5px; right: -15px; top: 15px;"></button>
+                    <button style="padding: 5px; right: -15px; top: 30px;"></button>
+                    <button style="padding: 5px; right: -15px; top: 45px;"></button>
+                    <button style="padding: 5px; right: -15px; top: 60px;"></button>
+                </div>
+            </td>
+            <td style="width: 25%;">
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" placeholder="Введите цвет" value="#0000ff" id="input2">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let color1 = "#ff0000"
+        let color2 = "#0000ff"
+        function changeBlockColor(color1, color2) {
+            document.querySelector('#block').style = `
+                width: 100%; height: 500px; 
+                position: relative;
+                background: rgb(255,0,0);
+                background: linear-gradient(90deg, ${color1} 0%, ${color2} 100%);
+            `
+        }
+        changeBlockColor(color1, color2)
+
+        let buttons = document.querySelectorAll('button')
+        for (let button of buttons) {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+
+            for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            button.style.backgroundColor = color
+            button.addEventListener('click', function () {
+                changeBlockColor(color, color2)
+            })
+        }
+
+
+        let input1 = document.querySelector('#input1')
+        let input2 = document.querySelector('#input2')
+        
+
+        input1.addEventListener('input', function(event) {
+            color1 = event.target.value
+            changeBlockColor(color1, color2)
+        });
+        input2.addEventListener('input', function(event) {
+            color2 = event.target.value
+            changeBlockColor(color1, color2)
+        });
+    </script>
+</body>
+</html>
