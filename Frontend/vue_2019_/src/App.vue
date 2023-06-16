@@ -1,13 +1,13 @@
 <template>
-  <!-- <section class="p-5">
+  <section class="p-5">
     <div class="d-flex justify-content-between align-items-center mb-5">
       <h2 class="">Event Booking Platform</h2>
       <button class="py-1 px-4 fs-4 bg-white">Login</button>
-    </div> -->
+    </div>
     <router-view>
     </router-view>
 
-  <!-- </section> -->
+  </section>
 </template>
 
 <style>
